@@ -15,11 +15,8 @@ function handleDataAvailable(event) {
 recordButton.addEventListener('click', async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     recordedBlobs = [];
-    try {
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/mpeg' });
-    } catch(error) {
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
-    }
+    mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/mpeg' });
+
     
     recordButton.disabled = true;
     stopButton.disabled = false;
