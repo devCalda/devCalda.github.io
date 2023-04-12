@@ -16,7 +16,7 @@ recordButton.addEventListener('click', async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     recordedBlobs = [];
     try {
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/mp4' });
+        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/mpeg' });
     } catch(error) {
         mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
     }
